@@ -41,10 +41,11 @@
     
     <div id="controls">
       <strong>Controles:</strong><br>
-      W/A/S/D o ↑↓←→ - Movimiento<br>
-      Espacio - Saltar<br>
-      Mouse - Mirar alrededor<br>
-      Click - Interactuar con autos
+      <strong style="color: #FFD700;">Movimiento:</strong> W/A/S/D ↑↓←→<br>
+      <strong style="color: #FF6600;">Autos:</strong> Teclas 1-8<br>
+      <strong style="color: #00FF00;">Color:</strong> 0-9 (con auto seleccionado)<br>
+      <strong style="color: #FF0000;">Rotar:</strong> R<br>
+      <strong style="color: #4CC3D9;">Saltar:</strong> Espacio
     </div>
 
     <a-scene background="color: #FFFFFF">
@@ -184,6 +185,46 @@
         <a-text value="LAMBORGHINI" position="0 2.5 0" scale="1.5 1.5 1.5" color="white" align="center"></a-text>
       </a-entity>
 
+      <!-- PEDESTAL 7: Bugatti Chiron negro -->
+      <a-entity position="-8 0 12" data-car="bugatti">
+        <!-- Pedestal amarillo -->
+        <a-cylinder radius="1.5" height="0.4" color="#FFD700" position="0 0.2 0"></a-cylinder>
+        <!-- Auto deportivo negro -->
+        <a-box width="2" height="1.2" depth="4.5" color="#1a1a1a" position="0 0.8 0"></a-box>
+        <a-box width="1.8" height="0.95" depth="2.2" color="#1a1a1a" position="0 1.8 -0.3"></a-box>
+        <!-- Líneas azules deportivas -->
+        <a-box width="2.1" height="0.08" depth="4.5" color="#0066FF" position="0 1.2 0"></a-box>
+        <!-- Alerón trasero grande -->
+        <a-box width="2.4" height="1.4" depth="0.35" color="#333333" position="0 1.8 -2.1"></a-box>
+        <!-- Ruedas extra grandes -->
+        <a-cylinder radius="0.52" height="0.32" color="#1a1a1a" position="-0.9 0.55 1.3" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.52" height="0.32" color="#1a1a1a" position="0.9 0.55 1.3" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.52" height="0.32" color="#1a1a1a" position="-0.9 0.55 -1.3" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.52" height="0.32" color="#1a1a1a" position="0.9 0.55 -1.3" rotation="0 0 90"></a-cylinder>
+        <!-- Etiqueta -->
+        <a-text value="BUGATTI CHIRON" position="0 2.6 0" scale="1.5 1.5 1.5" color="white" align="center"></a-text>
+      </a-entity>
+
+      <!-- PEDESTAL 8: McLaren P1 plata -->
+      <a-entity position="8 0 12" rotation="0 45 0" data-car="mclaren">
+        <!-- Pedestal amarillo -->
+        <a-cylinder radius="1.5" height="0.4" color="#FFD700" position="0 0.2 0"></a-cylinder>
+        <!-- Auto deportivo plateado -->
+        <a-box width="1.95" height="1.15" depth="4.3" color="#C0C0C0" position="0 0.75 0"></a-box>
+        <a-box width="1.75" height="0.9" depth="2.1" color="#C0C0C0" position="0 1.75 -0.25"></a-box>
+        <!-- Detalles naranjas -->
+        <a-box width="1.9" height="0.06" depth="4.3" color="#FF6600" position="0 1.05 0"></a-box>
+        <!-- Alerón aerodinámico -->
+        <a-box width="2.2" height="1.1" depth="0.32" color="#333333" position="0 1.7 -2"></a-box>
+        <!-- Ruedas -->
+        <a-cylinder radius="0.45" height="0.28" color="#222222" position="-0.85 0.5 1.2" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.45" height="0.28" color="#222222" position="0.85 0.5 1.2" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.45" height="0.28" color="#222222" position="-0.85 0.5 -1.2" rotation="0 0 90"></a-cylinder>
+        <a-cylinder radius="0.45" height="0.28" color="#222222" position="0.85 0.5 -1.2" rotation="0 0 90"></a-cylinder>
+        <!-- Etiqueta -->
+        <a-text value="McLAREN P1" position="0 2.4 0" scale="1.5 1.5 1.5" color="white" align="center"></a-text>
+      </a-entity>
+
       <!-- Cartel de bienvenida -->
       <a-text value="�️ MUSEO DEL CARRO 🏎️" position="0 6.5 -14" scale="4 4 4" color="#DC143C" align="center" font="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-text>
 
@@ -194,6 +235,18 @@
       <script>
         // Crear contexto de audio
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Variables de control
+        let selectedCar = null;
+        const keys = {};
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        // Paleta de colores disponibles
+        const colorPalette = [
+          '#DC143C', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', 
+          '#FF6600', '#FF00FF', '#00FFFF', '#FFFFFF', '#FFA500'
+        ];
 
         // Función para reproducir sonido
         function playSound(frequency = 800, duration = 200) {
@@ -219,6 +272,61 @@
           setTimeout(() => playSound(200, 150), 100);
           setTimeout(() => playSound(250, 200), 250);
         }
+
+        // Función para cambiar color del auto
+        function changeCarColor(car, colorIndex) {
+          if (!car) return;
+          
+          const color = colorPalette[colorIndex % colorPalette.length];
+          const boxes = car.querySelectorAll('a-box');
+          boxes.forEach(box => {
+            if (box.getAttribute('color') !== '#FFD700' && box.getAttribute('color') !== '#8B6914') {
+              box.setAttribute('color', color);
+            }
+          });
+          
+          playSound(600, 150);
+          engineSound();
+        }
+
+        // Función para rotar el auto
+        function rotateCar(car) {
+          if (!car) return;
+          
+          car.setAttribute('animation__rotate', 'property: rotation; to: 0 360 0; duration: 2000; easing: easeInOutQuad');
+          engineSound();
+        }
+
+        // Control de teclado para movimiento
+        document.addEventListener('keydown', (e) => {
+          keys[e.key.toLowerCase()] = true;
+          
+          // Seleccionar auto con teclas 1-6
+          const carElements = document.querySelectorAll('[data-car]');
+          const keyNum = parseInt(e.key);
+          if (keyNum >= 1 && keyNum <= 6) {
+            selectedCar = carElements[keyNum - 1];
+            if (selectedCar) {
+              showCarInfo(selectedCar.getAttribute('data-car'));
+              rotateCar(selectedCar);
+            }
+          }
+          
+          // Cambiar color con números del teclado numérico
+          if (e.key >= '0' && e.key <= '9' && selectedCar) {
+            const colorIndex = parseInt(e.key);
+            changeCarColor(selectedCar, colorIndex);
+          }
+          
+          // Rotar con R
+          if (e.key.toLowerCase() === 'r' && selectedCar) {
+            rotateCar(selectedCar);
+          }
+        });
+
+        document.addEventListener('keyup', (e) => {
+          keys[e.key.toLowerCase()] = false;
+        });
 
         // Datos de los autos
         const cars = {
@@ -263,6 +371,20 @@
             power: '1001 CV',
             speed: '350 km/h',
             info: 'Superdeportivo híbrido italiano. Futuro de la conducción de lujo.'
+          },
+          'bugatti': {
+            name: 'BUGATTI CHIRON',
+            year: '2016',
+            power: '1500 CV',
+            speed: '490 km/h',
+            info: 'Hipercoche francés. Velocidad y lujo extremo en un solo vehículo.'
+          },
+          'mclaren': {
+            name: 'McLAREN P1',
+            year: '2013',
+            power: '913 CV',
+            speed: '350 km/h',
+            info: 'Superdeportivo británico híbrido. Tecnología de F1 en carretera.'
           }
         };
 
@@ -281,7 +403,7 @@
         }
 
         // Raycaster para detectar clicks en autos
-        document.addEventListener('click', function() {
+        document.addEventListener('click', function(event) {
           const cameraEl = document.querySelector('[camera]');
           const raycaster = new THREE.Raycaster();
           const mouse = new THREE.Vector2(0, 0);
@@ -306,22 +428,67 @@
             
             // Animar y mostrar info del primer auto clickeado
             let element = intersects[0].object;
-            while (element.parent && !element.parent.userData.carType) {
+            while (element.parent && !element.parent.dataset.car) {
               element = element.parent;
             }
-            if (element.parent && element.parent.userData.carType) {
-              showCarInfo(element.parent.userData.carType);
+            if (element.parent && element.parent.dataset.car) {
+              selectedCar = element.parent;
+              showCarInfo(element.parent.dataset.car);
               // Rotar el auto
-              element.parent.setAttribute('animation', 'property: rotation; to: 0 360 0; duration: 2000; easing: easeInOutQuad');
+              rotateCar(element.parent);
             }
           }
         });
 
-        // Animar los autos (rotación suave)
-        window.addEventListener('load', () => {
-          const cars = document.querySelectorAll('[data-car]');
-          cars.forEach(car => {
-            car.setAttribute('animation', 'property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true');
-          });
+        // Eventos táctiles para dispositivos móviles
+        document.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          
+          const diffX = touchEndX - touchStartX;
+          const diffY = touchEndY - touchStartY;
+
+          // Detectar si fue un toque simple o un gesto
+          if (Math.abs(diffX) < 50 && Math.abs(diffY) < 50) {
+            // Toque simple - seleccionar auto
+            const cameraEl = document.querySelector('[camera]');
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2(
+              (touchEndX / window.innerWidth) * 2 - 1,
+              -(touchEndY / window.innerHeight) * 2 + 1
+            );
+
+            raycaster.setFromCamera(mouse, cameraEl.object3D.getWorldPosition(new THREE.Vector3()));
+            
+            const carElements = document.querySelectorAll('[data-car]');
+            const intersects = [];
+            
+            carElements.forEach(car => {
+              const carMesh = car.object3D;
+              intersects.push(...raycaster.intersectObject(carMesh, true));
+            });
+
+            if (intersects.length > 0) {
+              let element = intersects[0].object;
+              while (element.parent && !element.parent.dataset.car) {
+                element = element.parent;
+              }
+              if (element.parent && element.parent.dataset.car) {
+                selectedCar = element.parent;
+                showCarInfo(element.parent.dataset.car);
+                rotateCar(element.parent);
+                engineSound();
+              }
+            }
+          }
         });
       </script>
+
+    </a-scene>
+  </body>
+</html>

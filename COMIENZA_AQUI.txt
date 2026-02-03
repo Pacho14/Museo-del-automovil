@@ -1,0 +1,250 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    ¡BIENVENIDO AL MUSEO DEL AUTOMÓVIL VR!                ║
+║                                                                            ║
+║              Experiencia Virtual Interactiva de 3D en Tiempo Real         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+🚀 COMIENZA AQUÍ EN 3 PASOS
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 1: ABRE UNA DE ESTAS OPCIONES
+  
+  Opción A (Más rápido - Recomendado):
+    ├─ Abre: start.html
+    └─ Haz click en "ENTRAR AL MUSEO"
+
+  Opción B (Con más detalles):
+    ├─ Abre: index.html
+    └─ Haz click en "🚀 Entrar al Museo"
+
+  Opción C (Servidor local - Mejor experiencia):
+    ├─ Ejecuta: servidor.bat
+    ├─ Abre: http://localhost:8000
+    └─ Selecciona: museo-autos.html
+
+
+PASO 2: ESPERA A QUE CARGUE
+  
+  ⏳ La primera carga tardará 5-10 segundos
+     (A-Frame descarga del CDN la primera vez)
+  
+  ✓ Una vez cargado verás el museo 3D
+
+
+PASO 3: ¡COMIENZA A EXPLORAR!
+  
+  Usa estos controles básicos:
+    • W/A/S/D o Flechas ↑↓←→ - Moverte
+    • 1-8 - Seleccionar auto
+    • 0-9 - Cambiar color
+    • R - Rotar auto
+    • Ratón - Mirar alrededor
+    • Espacio - Saltar
+
+
+⚡ CONTROLES RÁPIDOS
+════════════════════════════════════════════════════════════════════════════════
+
+MOVIMIENTO:                SELECCIÓN:             PERSONALIZACIÓN:
+  W - Adelante               1 - Ferrari F40         0-9 - Cambiar color
+  A - Izquierda              2 - Fórmula 1          R - Rotar auto
+  S - Atrás                  3 - Testarossa         Click - Seleccionar
+  D - Derecha                4 - Porsche 911       
+  Espacio - Saltar           5 - Fast 71            ESPECIAL:
+  Ratón - Mirar              6 - Lamborghini        F11 - Pantalla completa
+                             7 - Bugatti            F12 - Consola (debug)
+                             8 - McLaren
+
+
+🎨 EJEMPLOS RÁPIDOS
+════════════════════════════════════════════════════════════════════════════════
+
+Ejemplo 1: Ver el Ferrari rojo
+  1. Presiona: 1
+  2. Espera a que rote automáticamente
+  3. ¡Verás info del auto en la esquina superior izquierda!
+
+Ejemplo 2: Cambiar color a azul
+  1. Presiona: 1 (para seleccionar un auto)
+  2. Presiona: 3 (para color azul)
+  3. ¡El auto cambiará de color al instante!
+
+Ejemplo 3: Recorrer todos los autos
+  1. Presiona: 1 2 3 4 5 6 7 8 (secuencialmente)
+  2. Cada auto se seleccionará y rotará
+  3. Verás 8 vehículos distintos
+
+Ejemplo 4: Exploración libre
+  1. Usa WASD para moverte
+  2. Mueve el ratón para mirar alrededor
+  3. Presiona Espacio para saltar
+  4. ¡Camina por todo el museo!
+
+
+📁 ARCHIVOS INCLUIDOS
+════════════════════════════════════════════════════════════════════════════════
+
+Para Iniciar:
+  • start.html ............................ Inicio rápido (RECOMENDADO)
+  • index.html ............................ Página con botones interactivos
+  • museo-autos.html ...................... La escena VR principal
+
+Para Servidor Local:
+  • servidor.bat .......................... Script para Windows
+  • package.json .......................... Metadatos del proyecto
+
+Para Aprender:
+  • GUIA_RAPIDA.txt ....................... Referencia rápida de controles
+  • README_INSTRUCCIONES.txt .............. Guía completa de usuario
+  • ESPECIFICACIONES_TECNICAS.md .......... Documentación técnica avanzada
+  • RESUMEN_PROYECTO.txt .................. Resumen de implementación
+  • RESUMEN_EJECUTIVO.txt ................. Resumen ejecutivo
+
+
+💡 CONSEJOS IMPORTANTES
+════════════════════════════════════════════════════════════════════════════════
+
+✓ TIP 1: Usa Chrome para mejor compatibilidad
+  → Chrome tiene máxima compatibilidad con WebGL y WebXR
+
+✓ TIP 2: La primera carga es lenta
+  → A-Frame se descarga desde CDN (~2MB)
+  → Las cargas siguientes serán instantáneas
+
+✓ TIP 3: Prueba el sonido
+  → Verifica que tu volumen está activo
+  → Interactúa con un auto para activar AudioContext
+  → Escucharás sonido de motor
+
+✓ TIP 4: Para mejor experiencia
+  → Usa pantalla completa (F11)
+  → Aumenta el volumen
+  → Cierra otras pestañas del navegador
+
+✓ TIP 5: En móvil
+  → Los controles numéricos no funcionan
+  → Toca los autos para seleccionarlos
+  → Desliza con dos dedos para mirar
+
+
+❓ PROBLEMAS COMUNES
+════════════════════════════════════════════════════════════════════════════════
+
+P: "¿Tarda mucho en cargar?"
+R: Sí, la PRIMERA carga es lenta (5-10s). Las siguientes serán instantáneas.
+
+P: "¿No veo nada?"
+R: Espera más tiempo. A-Frame necesita descargar librerías. 
+   Si no aparece nada después de 15 segundos, recarga (Ctrl+R).
+
+P: "¿Sin sonido?"
+R: 1) Verifica volumen del sistema
+   2) Prueba interactuando (click en un auto)
+   3) Si sigue sin funcionar, intenta en otro navegador
+
+P: "¿Bajo rendimiento?"
+R: 1) Cierra otras pestañas
+   2) Cierra programas pesados
+   3) Reduce resolución temporalmente
+
+P: "¿Funcionas en móvil?"
+R: Sí, pero con limitaciones. Los controles numéricos no funcionan.
+   Toca los autos para interactuar.
+
+
+🎮 CONTROLES AVANZADOS (Opcional)
+════════════════════════════════════════════════════════════════════════════════
+
+Para usuarios que quieren explorar más:
+
+Movimiento Avanzado:
+  • WASD + Ratón: Movimiento tipo videojuego (Recomendado)
+  • Flechas + Ratón: Alternativa
+  • Espacio: Saltar (con gravedad física)
+  • Doble W: Movimiento rápido
+
+Selección Avanzada:
+  • Click + 1-8: Seleccionar y cambiar color en secuencia
+  • Click directo en auto: Raycast de selección
+  • Toque (móvil): Seleccionar auto tocándolo
+
+Personalización:
+  • R + 0-9: Rotar y cambiar color simultáneamente
+  • 1-8 secuencialmente: Ver rotación de todos los autos
+  • F12: Ver consola para debug
+
+
+🌐 COMPATIBILIDAD
+════════════════════════════════════════════════════════════════════════════════
+
+✓ Navegadores soportados:
+  • Google Chrome 65+ (RECOMENDADO)
+  • Mozilla Firefox 55+
+  • Microsoft Edge 79+
+  • Apple Safari 12.1+
+  • Opera 50+
+
+✓ Dispositivos soportados:
+  • Windows 10/11
+  • macOS
+  • Linux
+  • iPad/Tablet Android
+  • iPhone/Android (limitado)
+  • Visores VR (Meta Quest, HTC Vive, Valve Index, etc.)
+
+✓ Modos:
+  • Escritorio: Navegador normal
+  • Móvil: Navegador móvil
+  • VR: Conecta tu visor (se activa automáticamente)
+
+
+🔧 CONFIGURACIÓN (Usuarios Avanzados)
+════════════════════════════════════════════════════════════════════════════════
+
+Para editar el museo (necesita conocimiento de HTML/JavaScript):
+
+1. Abre museo-autos.html con un editor de texto (VS Code, Notepad, etc.)
+
+2. Busca secciones:
+   - colorPalette: Cambiar colores disponibles
+   - cars: Editar información de vehículos
+   - position=: Mover autos de posición
+   - color=: Cambiar color inicial
+
+3. Guarda y recarga en navegador
+
+3. ¡Los cambios aparecerán inmediatamente!
+
+
+📞 SOPORTE
+════════════════════════════════════════════════════════════════════════════════
+
+Si tienes dudas:
+
+1. Consulta GUIA_RAPIDA.txt (referencia rápida)
+2. Lee README_INSTRUCCIONES.txt (guía completa)
+3. Abre la consola (F12) para ver errores
+4. Intenta en navegador diferente
+5. Limpia el caché (Ctrl+Shift+Del)
+
+
+🎉 ¡COMIENZA AHORA!
+════════════════════════════════════════════════════════════════════════════════
+
+Pasos finales:
+
+1. Abre start.html 👈 AQUÍ
+2. Haz click en "ENTRAR AL MUSEO"
+3. ¡Disfruta la experiencia VR!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                  🏎️ ¡BIENVENIDO AL MUSEO! 🚗 ✨
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Versión: 1.0.0 | Proyecto Completo | Febrero 2024 | Autor: Francisco
+
+════════════════════════════════════════════════════════════════════════════════

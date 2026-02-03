@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo del Automóvil VR - Inicio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #DC143C;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .section li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .section li:before {
+            content: "🚗";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .control-item {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .control-key {
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #DC143C, #FF0000);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .info-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #856404;
+        }
+        
+        .info-box strong {
+            color: #DC143C;
+        }
+        
+        .cars-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .car-card {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .car-emoji {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .car-name {
+            font-weight: bold;
+            color: #DC143C;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏎️ MUSEO DEL AUTOMÓVIL VR 🏎️</h1>
+        <p class="subtitle">Experiencia Virtual Interactiva de Autos Clásicos y Modernos</p>
+        
+        <div class="section">
+            <h2>🚗 Vehículos Disponibles (8 Modelos)</h2>
+            <div class="cars-showcase">
+                <div class="car-card">
+                    <div class="car-emoji">🔴</div>
+                    <div class="car-name">Ferrari F40</div>
+                    <div>1987</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">🏁</div>
+                    <div class="car-name">Formula 1 2024</div>
+                    <div>2024</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">🔴</div>
+                    <div class="car-name">Testarossa</div>
+                    <div>1984</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">⚪</div>
+                    <div class="car-name">Porsche 911</div>
+                    <div>1963</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">🏎️</div>
+                    <div class="car-name">Fast 71 GLB</div>
+                    <div>2024</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">🔴</div>
+                    <div class="car-name">Lamborghini</div>
+                    <div>2023</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">⬛</div>
+                    <div class="car-name">Bugatti Chiron</div>
+                    <div>2016</div>
+                </div>
+                <div class="car-card">
+                    <div class="car-emoji">⚫</div>
+                    <div class="car-name">McLaren P1</div>
+                    <div>2013</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⌨️ Controles Principales</h2>
+            <div class="controls-grid">
+                <div class="control-item">
+                    <span class="control-key">W/A/S/D</span>
+                    <span>Movimiento</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">1-8</span>
+                    <span>Seleccionar auto</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">0-9</span>
+                    <span>Cambiar color</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">R</span>
+                    <span>Rotar auto</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">↑↓←→</span>
+                    <span>Movimiento alternativo</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">ESPACIO</span>
+                    <span>Saltar</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">CLICK</span>
+                    <span>Seleccionar auto</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">TOQUE</span>
+                    <span>Móvil/Táctil</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✨ Características</h2>
+            <ul>
+                <li>Entorno 3D realista con iluminación avanzada</li>
+                <li>8 vehículos únicos con detalles aerodinámicos</li>
+                <li>Cambio dinámico de colores (10 colores por auto)</li>
+                <li>Sonidos de motor generados por síntesis de audio</li>
+                <li>Información detallada de cada vehículo</li>
+                <li>Compatible con dispositivos VR (Meta Quest, HTC Vive, etc.)</li>
+                <li>Controles táctiles para dispositivos móviles</li>
+                <li>Navegación libre por el museo</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <strong>💡 Consejo:</strong> Presiona las teclas <strong>1-8</strong> para seleccionar un auto, luego presiona <strong>0-9</strong> para cambiar su color. Presiona <strong>R</strong> para rotarlo y verlo desde todos los ángulos.
+        </div>
+        
+        <div class="button-group">
+            <a href="museo-autos.html" class="btn btn-primary">🚀 Entrar al Museo</a>
+            <a href="README_INSTRUCCIONES.txt" class="btn btn-secondary" target="_blank">📖 Ver Instrucciones</a>
+        </div>
+        
+        <footer>
+            <p><strong>Museo del Automóvil VR v1.0</strong></p>
+            <p>Creado con A-Frame WebGL | Compatible con navegadores modernos y dispositivos VR</p>
+            <p>© 2024 Francisco - Todos los derechos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>

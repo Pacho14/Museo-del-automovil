@@ -1,0 +1,342 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║            🏎️  GUÍA RÁPIDA DE USUARIO - MUSEO DEL AUTOMÓVIL VR  🏎️          ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+
+🚀 INICIO RÁPIDO
+═════════════════════════════════════════════════════════════════════════════════
+
+Paso 1: Abre "index.html"
+  → Click derecho en el archivo → Abrir con → Navegador
+
+Paso 2: Haz click en "Entrar al Museo"
+  → Se abrirá la escena 3D interactiva
+
+Paso 3: Espera a que cargue
+  → A-Frame tardará 5-10 segundos en inicializar
+  → Verás la escena cuando esté lista
+
+Paso 4: ¡Explora y disfruta!
+  → Usa WASD para moverte
+  → Usa ratón para mirar alrededor
+  → Presiona números 1-8 para seleccionar autos
+
+
+⚡ EJEMPLOS DE INTERACCIÓN
+═════════════════════════════════════════════════════════════════════════════════
+
+EJEMPLO 1: Explorar el Ferrari
+  1. Presiona "1" para seleccionar Ferrari F40
+  2. Verás la información en la esquina superior izquierda
+  3. El auto rotará automáticamente
+  4. Escucharás sonido de motor
+
+EJEMPLO 2: Cambiar color de un auto
+  1. Presiona "1" para seleccionar un auto (ejemplo: Ferrari)
+  2. Presiona "2" para cambiar a color rojo puro
+  3. El auto cambia de color inmediatamente
+  4. Escucharás un sonido de confirmación
+
+EJEMPLO 3: Ver todos los autos
+  1. Usa WASD para moverte por el museo
+  2. Presiona 1, 2, 3, 4, 5, 6, 7, 8 para verlos todos
+  3. Cada auto tiene su propia información
+  4. Nota los diferentes tamaños y detalles
+
+EJEMPLO 4: Rotar un auto completo
+  1. Presiona "5" para seleccionar Fast 71
+  2. Presiona "R" para rotar el auto
+  3. El auto girará 360° en 2 segundos
+  4. Perfecto para ver detalles aerodinámicos
+
+EJEMPLO 5: Exploración libre
+  1. Presiona W para avanzar
+  2. Presiona A para ir a la izquierda
+  3. Mueve el ratón para mirar alrededor
+  4. Presiona Espacio para saltar
+  5. Usa D y S para moverte derecha y atrás
+
+
+🎨 PALETA DE COLORES - TABLA RÁPIDA
+═════════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────┐
+│ Tecla → Color            │ Ejemplo             │ Hex    │
+├─────────────────────────────────────────────────────────┤
+│  0   → Rojo Clásico      │ ████████████ 🔴    │ #DC143C│
+│  1   → Rojo Puro         │ ████████████ ❤️    │ #FF0000│
+│  2   → Verde             │ ████████████ 💚    │ #00FF00│
+│  3   → Azul              │ ████████████ 💙    │ #0000FF│
+│  4   → Amarillo          │ ████████████ 💛    │ #FFFF00│
+│  5   → Naranja           │ ████████████ 🧡    │ #FF6600│
+│  6   → Magenta           │ ████████████ 💜    │ #FF00FF│
+│  7   → Cian              │ ████████████       │ #00FFFF│
+│  8   → Blanco            │ ████████████ 🤍    │ #FFFFFF│
+│  9   → Naranja Oscuro    │ ████████████ 🟠    │ #FFA500│
+└─────────────────────────────────────────────────────────┘
+
+USO: Presiona el número (0-9) con un auto seleccionado
+
+
+🚗 LISTA DE AUTOS - SECUENCIA RÁPIDA
+═════════════════════════════════════════════════════════════════════════════════
+
+┌──────────────────────────────────────────────────────────┐
+│ Tecla → Modelo                │ Año   │ Potencia   │ Km/h│
+├──────────────────────────────────────────────────────────┤
+│  1   → Ferrari F40            │ 1987  │ 478 CV     │ 324 │
+│  2   → Fórmula 1 2024         │ 2024  │ 1050 CV    │ 370 │
+│  3   → Ferrari Testarossa     │ 1984  │ 390 CV     │ 290 │
+│  4   → Porsche 911            │ 1963  │ 130 CV     │ 200 │
+│  5   → Fast 71 GLB            │ 2024  │ 550 CV     │ 300 │
+│  6   → Lamborghini Revuelto   │ 2023  │ 1001 CV    │ 350 │
+│  7   → Bugatti Chiron         │ 2016  │ 1500 CV    │ 490 │
+│  8   → McLaren P1             │ 2013  │ 913 CV     │ 350 │
+└──────────────────────────────────────────────────────────┘
+
+USO: Presiona el número (1-8) para seleccionar el auto
+
+
+⌨️ REFERENCIA RÁPIDA DE CONTROLES
+═════════════════════════════════════════════════════════════════════════════════
+
+MOVIMIENTO:
+  W             - Avanzar
+  A             - Mover izquierda
+  S             - Retroceder
+  D             - Mover derecha
+  ↑ ↓ ← →       - Movimiento alternativo
+  ESPACIO       - Saltar
+
+SELECCIÓN:
+  1-8           - Seleccionar auto específico
+  CLICK         - Seleccionar por raycast
+  TOQUE         - Seleccionar (móvil/VR)
+
+MODIFICACIÓN:
+  0-9           - Cambiar color del auto
+  R             - Rotar auto
+
+ESPECIAL:
+  RATÓN         - Mirar alrededor (cámara)
+  F11           - Pantalla completa
+  F12           - Consola para debug
+
+
+💡 CONSEJOS Y TRUCOS
+═════════════════════════════════════════════════════════════════════════════════
+
+CONSEJO 1: Exploración Efectiva
+  • Usa WASD para navegar + ratón para mirar
+  • Presiona números rápidamente para saltar entre autos
+  • Nota las diferencias de tamaño entre los vehículos
+
+CONSEJO 2: Cambio de Colores Rápido
+  • Selecciona auto (presiona número)
+  • Presiona 0-9 rápidamente para probar colores
+  • Repite el número para volver al color original
+
+CONSEJO 3: Ver Detalles
+  • Presiona R para rotar el auto
+  • Acércate caminando (WASD)
+  • Mira desde diferentes ángulos con el ratón
+
+CONSEJO 4: Mejor Experiencia
+  • Abre en pantalla completa (F11)
+  • Usa navegador actualizado (Chrome recomendado)
+  • Desactiva otras pestañas/programas pesados
+  • Aumenta el volumen para escuchar los sonidos
+
+CONSEJO 5: Modo VR
+  • Conecta tu visor (Meta Quest, Vive, etc.)
+  • Accede desde http://localhost:8000
+  • Usa los controles VR para máxima inmersión
+  • Presiona botón de menú para ver controles VR
+
+
+❓ PREGUNTAS FRECUENTES
+═════════════════════════════════════════════════════════════════════════════════
+
+P: ¿Cómo cambio el color de un auto?
+R: 1) Presiona 1-8 para seleccionar auto
+   2) Presiona 0-9 para cambiar color
+   Ejemplo: "3" luego "5" = Ferrari Testarossa naranja
+
+P: ¿Funciona en móvil?
+R: Sí. Toca un auto para seleccionar y usa los botones en pantalla
+   para los controles. El teclado numérico no funciona pero puedes
+   interactuar tocando.
+
+P: ¿Funciona en realidad virtual?
+R: Sí. Conecta tu visor VR (Meta Quest, HTC Vive, etc.) y accede
+   desde http://localhost:8000. Se iniciará en modo VR automáticamente.
+
+P: ¿Por qué no se oyen los sonidos?
+R: 1) Verifica volumen del sistema
+   2) Permite sonido en el navegador
+   3) Prueba en navegador diferente
+   4) Recarga la página (F5)
+
+P: ¿Se carga muy lentamente?
+R: Es normal la primera carga. A-Frame descarga ~2MB de internet.
+   Luego será mucho más rápido (está en caché).
+
+P: ¿Cómo maximizo el FPS?
+R: 1) Cierra otras pestañas
+   2) Usa navegador actualizado
+   3) Desactiva extensiones pesadas
+   4) Usa GPU dedicada (AMD/NVIDIA)
+
+P: ¿Qué pasa si presiono un número que no corresponde?
+R: Solo funcionan 1-8. Si presionas 9+, nada ocurre. Presiona
+   números válidos del 1 al 8.
+
+P: ¿Cómo vuelvo a la página de inicio?
+R: Presiona el botón atrás del navegador o cierra y abre index.html
+
+
+🐛 SOLUCIÓN DE PROBLEMAS
+═════════════════════════════════════════════════════════════════════════════════
+
+PROBLEMA: "No se ve nada en pantalla"
+POSIBLES CAUSAS:
+  ✗ A-Frame aún está cargando (espera 10 segundos)
+  ✗ WebGL no soportado en el navegador
+  ✗ GPU desactivada en navegador
+  ✗ Conflicto con extensiones
+
+SOLUCIONES:
+  1) Espera 10 segundos a que cargue completamente
+  2) Abre la consola (F12) para ver errores
+  3) Intenta en Chrome en lugar de otro navegador
+  4) Desactiva extensiones (Mode privado para probar)
+  5) Actualiza tu navegador a la última versión
+  6) Verifica que tienes tarjeta gráfica compatible
+
+─────────────────────────────────────────────────────────────────────
+
+PROBLEMA: "Sin sonido de motor"
+POSIBLES CAUSAS:
+  ✗ Volumen del sistema en silencio
+  ✗ Navegador no permite sonido
+  ✗ AudioContext no inicializado
+
+SOLUCIONES:
+  1) Verifica volumen en Windows (esquina inferior derecha)
+  2) Abre navegador en modo normal (no incógnito inicialmente)
+  3) Interactúa primero (click en auto) para iniciar AudioContext
+  4) Recarga la página si no hay sonido
+  5) Prueba otro navegador
+
+─────────────────────────────────────────────────────────────────────
+
+PROBLEMA: "El auto no cambia de color"
+POSIBLES CAUSAS:
+  ✗ No hay auto seleccionado
+  ✗ Presionaste tecla incorrecta
+  ✗ Ya está ese color (cambio invisible)
+
+SOLUCIONES:
+  1) Presiona primero 1-8 para seleccionar auto
+  2) Luego presiona 0-9 para cambiar color
+  3) Intenta color diferente (por ej: 2 para rojo puro)
+  4) Verifica en esquina superior izquierda que hay auto seleccionado
+
+─────────────────────────────────────────────────────────────────────
+
+PROBLEMA: "Bajo rendimiento / Lag"
+POSIBLES CAUSAS:
+  ✗ Demasiadas pestañas abiertas
+  ✗ Otros programas usando GPU
+  ✗ Navegador desactualizado
+  ✗ GPU insuficiente
+
+SOLUCIONES:
+  1) Cierra otras pestañas del navegador
+  2) Cierra programas pesados (Photoshop, Juegos, etc.)
+  3) Actualiza tu navegador y controladores de GPU
+  4) Usa navegador en modo incógnito (sin extensiones)
+  5) Reduce resolución de pantalla temporalmente
+  6) Reinicia el navegador
+
+─────────────────────────────────────────────────────────────────────
+
+PROBLEMA: "No funciona en VR"
+POSIBLES CAUSAS:
+  ✗ Visor no conectado
+  ✗ Navegador no soporta WebXR
+  ✗ URL no es HTTPS (requerido para VR)
+  ✗ Falta permiso de sensores
+
+SOLUCIONES:
+  1) Verifica que el visor esté conectado y encendido
+  2) Usa Chrome o Edge (máxima compatibilidad WebXR)
+  3) Usa HTTPS si está en servidor remoto
+  4) Permite permisos de sensores en navegador
+  5) Reinicia el visor VR
+  6) Comprueba que WebXR está activado en navegador
+
+
+✨ ATAJOS ÚTILES
+═════════════════════════════════════════════════════════════════════════════════
+
+NAVEGACIÓN RÁPIDA:
+  • W + MOUSE: Movimiento intuitivo (típico de videojuegos)
+  • Números rápidamente: 1 2 3 4 5 6 7 8 (ver todos los autos)
+  • CLICK + NÚMEROS: Seleccionar + cambiar color en secuencia
+
+CAPTURA DE PANTALLA:
+  • F12 (DevTools) → Presionar elemento
+  • Verás la estructura HTML para screenshots
+  • Presiona Print Screen para screenshot de ventana
+
+MODO DE DEBUG:
+  • F12 → Console (Consola)
+  • Verás cualquier error o warning
+  • Útil para reportar problemas
+
+PANTALLA COMPLETA:
+  • F11: Activa/desactiva pantalla completa
+  • Proporciona experiencia inmersiva
+
+
+📞 CONTACTO Y SOPORTE
+═════════════════════════════════════════════════════════════════════════════════
+
+Si tienes problemas:
+
+1. Consulta esta guía (sección Solución de Problemas)
+2. Lee README_INSTRUCCIONES.txt (más detalles)
+3. Abre la consola (F12) para ver mensajes de error específicos
+4. Intenta en navegador diferente
+5. Limpia caché (Ctrl+Shift+Delete) y recarga
+
+
+📚 DOCUMENTACIÓN ADICIONAL
+═════════════════════════════════════════════════════════════════════════════════
+
+Para más información:
+  • README.md - Descripción general del proyecto
+  • README_INSTRUCCIONES.txt - Guía completa detallada
+  • ESPECIFICACIONES_TECNICAS.md - Documentación técnica
+  • index.html - Página de inicio con botones de ayuda
+
+
+🎉 NOTAS FINALES
+═════════════════════════════════════════════════════════════════════════════════
+
+✓ El museo es completamente funcional y seguro
+✓ Puedes interactuar sin límites
+✓ Los cambios no se guardan (puedes resetear presionando F5)
+✓ Compatible con navegadores modernos
+✓ Optimizado para máximo rendimiento
+✓ Experiencia VR profesional incluida
+
+¡Disfruta tu visita al Museo del Automóvil VR! 🏎️🚗✨
+
+
+═════════════════════════════════════════════════════════════════════════════════
+Versión: 1.0.0 | Guía de Usuario Rápida | Febrero 2024 | Francisco
+═════════════════════════════════════════════════════════════════════════════════
