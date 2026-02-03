@@ -1,0 +1,18 @@
+{
+  "name": "museo-autos-vr",
+  "version": "1.0.0",
+  "description": "A virtual reality museum showcasing classic and modern cars using A-Frame",
+  "main": "museo-autos.html",
+  "scripts": {
+    "start": "open museo-autos.html"
+  },
+  "keywords": [
+    "vr",
+    "aframe",
+    "webxr",
+    "cars",
+    "museum"
+  ],
+  "author": "Francisco",
+  "license": "MIT"
+}
