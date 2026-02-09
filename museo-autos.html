@@ -612,6 +612,8 @@
 
       <!-- Script para interacción con autos -->
       <script>
+        // Crear contexto de audio
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
         // Variables de control
         let selectedCar = null;
