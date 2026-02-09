@@ -1109,24 +1109,24 @@
         document.addEventListener('click', function(event) {
           const cameraEl = document.querySelector('[camera]');
           const raycaster = new THREE.Raycaster();
-          const mouse = new THREE.Vector2(0, 0);
+          const mouse = new THREE.Vector2(
+            (event.clientX / window.innerWidth) * 2 - 1,
+            -(event.clientY / window.innerHeight) * 2 + 1
+          );
 
-          raycaster.setFromCamera(mouse, cameraEl.object3D.getWorldPosition(new THREE.Vector3()));
+          raycaster.setFromCamera(mouse, cameraEl.object3D);
           
-          // Obtener todos los autos
-          const ferraris = document.querySelectorAll('[data-car]');
+          // Obtener todos los autos y el motor
+          const allObjects = document.querySelectorAll('[data-car]');
           const intersects = [];
           
-          ferraris.forEach(car => {
-            const carMesh = car.object3D;
-            const geometry = new THREE.BoxGeometry(2, 1.5, 4);
-            const mesh = new THREE.Mesh(geometry);
-            mesh.copy(carMesh);
-            intersects.push(...raycaster.intersectObject(carMesh, true));
+          allObjects.forEach(obj => {
+            const objMesh = obj.object3D;
+            intersects.push(...raycaster.intersectObject(objMesh, true));
           });
 
           if (intersects.length > 0) {
-            // Animar y mostrar info del primer auto clickeado
+            // Animar y mostrar info del primer objeto clickeado
             let element = intersects[0].object;
             while (element.parent && !element.parent.dataset.car) {
               element = element.parent;
@@ -1139,8 +1139,12 @@
               selectedCar = element.parent;
               const carKey = element.parent.dataset.car;
               showCarInfo(carKey, element.parent);
-              engineSound(carKey);
-              createParticleEffect(element.parent);
+              
+              // Solo reproducir sonido y efectos para autos, no para el motor
+              if (carKey !== 'motor') {
+                engineSound(carKey);
+                createParticleEffect(element.parent);
+              }
             }
           }
         });
@@ -1160,7 +1164,7 @@
 
           // Detectar si fue un toque simple o un gesto
           if (Math.abs(diffX) < 50 && Math.abs(diffY) < 50) {
-            // Toque simple - seleccionar auto
+            // Toque simple - seleccionar auto/motor
             const cameraEl = document.querySelector('[camera]');
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2(
@@ -1168,14 +1172,14 @@
               -(touchEndY / window.innerHeight) * 2 + 1
             );
 
-            raycaster.setFromCamera(mouse, cameraEl.object3D.getWorldPosition(new THREE.Vector3()));
+            raycaster.setFromCamera(mouse, cameraEl.object3D);
             
-            const carElements = document.querySelectorAll('[data-car]');
+            const allObjects = document.querySelectorAll('[data-car]');
             const intersects = [];
             
-            carElements.forEach(car => {
-              const carMesh = car.object3D;
-              intersects.push(...raycaster.intersectObject(carMesh, true));
+            allObjects.forEach(obj => {
+              const objMesh = obj.object3D;
+              intersects.push(...raycaster.intersectObject(objMesh, true));
             });
 
             if (intersects.length > 0) {
@@ -1191,8 +1195,12 @@
                 selectedCar = element.parent;
                 const carKey = element.parent.dataset.car;
                 showCarInfo(carKey, element.parent);
-                engineSound(carKey);
-                createParticleEffect(element.parent);
+                
+                // Solo reproducir sonido y efectos para autos, no para el motor
+                if (carKey !== 'motor') {
+                  engineSound(carKey);
+                  createParticleEffect(element.parent);
+                }
               }
             }
           }
