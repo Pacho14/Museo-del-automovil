@@ -1094,10 +1094,10 @@
         function viewOverall() {
           const playerEl = document.querySelector('[camera]').closest('a-entity');
           
-          // Posición general que permite ver toda la exposición con perspectiva panorámica
-          const targetX = -2;
-          const targetY = 4;
-          const targetZ = -3;
+          // Posición general que enfoca en los autos principales con la pared de fondo
+          const targetX = 0;
+          const targetY = 2.5;
+          const targetZ = 3;
           
           // Obtener posición actual
           const startPosAttr = playerEl.getAttribute('position');
