@@ -156,6 +156,13 @@
         </div>
         <div class="key-label">Detener rotación</div>
       </div>
+
+      <div class="control-group">
+        <div class="control-keys">
+          <div class="key-button" style="background: #9966FF; border-color: #6633CC;">V</div>
+        </div>
+        <div class="key-label">Deseleccionar</div>
+      </div>
       
       <div class="control-group">
         <div class="control-keys">
@@ -1003,6 +1010,24 @@
             takeScreenshot();
           }
           
+          // V: Deseleccionar auto y volver a vista inicial
+          if (e.key.toLowerCase() === 'v' && selectedCar) {
+            selectedCar = null;
+            document.getElementById('car-info').innerHTML = 'Selecciona auto para ver especificaciones';
+            document.getElementById('capture-btn').classList.remove('show');
+            
+            // Apagar todos los focos
+            Object.keys(carLights).forEach(key => {
+              const lightId = carLights[key];
+              const light = document.getElementById(lightId);
+              if (light) {
+                light.setAttribute('intensity', '0.3');
+              }
+            });
+            
+            resetToInitialView();
+          }
+          
           // Rotar el auto con flechas izquierda y derecha
           if (e.key === 'ArrowLeft' && selectedCar) {
             rotateCar(selectedCar, -1); // Rotar a la izquierda (counterclockwise)
@@ -1134,6 +1159,43 @@
           animateCamera();
         }
 
+        // Función para volver a la vista inicial
+        function resetToInitialView() {
+          const playerEl = document.querySelector('[camera]').closest('a-entity');
+          const initialPos = {x: 0, y: 1.8, z: 10};
+          
+          const startPosAttr = playerEl.getAttribute('position');
+          let startPos = {x: 0, y: 1.8, z: 10};
+          if (typeof startPosAttr === 'string') {
+            const parts = startPosAttr.split(' ');
+            startPos = {x: parseFloat(parts[0]), y: parseFloat(parts[1]), z: parseFloat(parts[2])};
+          } else {
+            startPos = startPosAttr;
+          }
+          
+          const duration = 1200; // 1.2 segundos
+          const startTime = Date.now();
+          
+          function animateCamera() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing suave (ease-out)
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            
+            const newX = startPos.x + (initialPos.x - startPos.x) * easeProgress;
+            const newY = startPos.y + (initialPos.y - startPos.y) * easeProgress;
+            const newZ = startPos.z + (initialPos.z - startPos.z) * easeProgress;
+            
+            playerEl.setAttribute('position', `${newX} ${newY} ${newZ}`);
+            
+            if (progress < 1) {
+              requestAnimationFrame(animateCamera);
+            }
+          }
+          
+          animateCamera();
+        }
 
         // Función para mostrar info del auto
         function showCarInfo(carKey, carElement) {
