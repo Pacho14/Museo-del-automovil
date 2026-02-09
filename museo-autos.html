@@ -971,6 +971,12 @@
             }
           }
           
+          // S: Detener rotación
+          if (e.key.toLowerCase() === 's' && autoRotation) {
+            autoRotation = false;
+            stopAutoRotation();
+          }
+          
           // T: Tour automático
           if (e.key.toLowerCase() === 't') {
             if (autoTourActive) {
